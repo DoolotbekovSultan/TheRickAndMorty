@@ -20,7 +20,7 @@ data class CharacterResponse(
         @SerialName("pages")
         val pages: Int,
         @SerialName("prev")
-        val prev: String
+        val prev: String?
     )
 
     @Serializable

@@ -20,10 +20,12 @@ class CharacterViewModel : ViewModel() {
         viewModelScope.launch {
             try {
                 val response = repository.getCharacter()
-                Log.e("ololo", "getCharacter: $response")
+                Log.e("TEST", "Success: ${response?.results?.size} characters loaded")
+                Log.e("ololo", "getCharacter: Response = $response")
                 _character.value = response
             } catch (e : Exception) {
-                Log.e("ololo", "getCharacter: ${e.message}")
+                Log.e("TEST", "Error: ${e.localizedMessage}", e)
+                Log.e("ololo", "getCharacter: Error = ${e.message}")
                 e.printStackTrace()
             }
         }
